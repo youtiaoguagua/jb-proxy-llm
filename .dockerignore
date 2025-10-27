@@ -1,0 +1,41 @@
+# Git相关
+.git
+.gitignore
+.github
+
+# 文档
+README.md
+*.md
+docs/
+
+# 配置文件和缓存
+.env*
+.cache
+.vscode
+.idea
+
+# 构建产物
+*.exe
+*.bin
+proxy-server
+dist/
+build/
+
+# 测试相关
+*_test.go
+coverage.out
+
+# 系统文件
+.DS_Store
+Thumbs.db
+*.tmp
+
+# 日志文件
+*.log
+
+# 临时文件
+temp/
+tmp/
+
+# Claude相关
+.claude
