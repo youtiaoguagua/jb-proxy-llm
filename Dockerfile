@@ -34,8 +34,5 @@ COPY --from=builder /app/proxy-server .
 # 切换到非root用户
 USER appuser
 
-# 暴露端口
-EXPOSE 8080
-
 # 启动命令
 CMD ["./proxy-server"]
