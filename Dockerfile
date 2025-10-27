@@ -31,8 +31,5 @@ WORKDIR /app
 # 从构建阶段复制二进制文件
 COPY --from=builder /app/proxy-server .
 
-# 切换到非root用户
-USER appuser
-
 # 启动命令
 CMD ["./proxy-server"]
