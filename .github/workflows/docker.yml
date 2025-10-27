@@ -1,13 +1,15 @@
 name: Create and publish a Docker image
 
-# Configures this workflow to run every time a change is pushed to branch called `release`.
+# Configures this workflow to run on manual trigger and every commit
 on:
   push:
-    branches: ['main', 'master', 'release']
-  pull_request:
     branches: ['main', 'master']
-  release:
-    types: [ published ]
+  workflow_dispatch:  # 手动触发
+    inputs:
+      reason:
+        description: '手动构建原因'
+        required: false
+        default: 'Manual build triggered'
 
 # Defines two custom environment variables for workflow. These are used for for Container registry domain, and a name for the Docker image that this workflow builds.
 env:
