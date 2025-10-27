@@ -10,12 +10,14 @@ ENV GO111MODULE=on \
 # 设置工作目录
 WORKDIR /app
 
-# 复制go mod文件并下载依赖
-COPY go.mod go.sum ./
-RUN go mod download
-
 # 复制源代码
 COPY . .
+
+# 初始化模块并下载依赖
+RUN go mod tidy
+RUN go mod download
+
+
 
 # 构建二进制文件（优化构建大小）
 RUN go build -ldflags="-s -w" -o proxy-server .
